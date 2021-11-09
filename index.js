@@ -23,6 +23,11 @@ app.get('/about-me', (req, res) => {
     res.send('About Me Page');
 });
 
+app.get('/posts/:category/:postId', (req, res)=> {
+    const { category, postId } = req.params;
+    res.send(`You are reading a ${category} category post and id is ${postId}.`);
+});
+
 app.post('/details', (req, res) => {
     res.send('Post request');
 });
