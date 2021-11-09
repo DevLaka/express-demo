@@ -27,7 +27,7 @@ app.get('/about-me', (req, res) => {
 app.get('/posts/:postId', (req, res) => {
     const { postId } = req.params;
     const { q } = req.query;
-    res.send(`You are reading a ${q} category post and id is ${postId}.`);
+    res.send(`You are reading a ${q} category post and id is ${postId}. Happy Reading`);
 });
 
 app.post('/details', (req, res) => {
