@@ -7,15 +7,7 @@ const path = require("path");
 const app = express();
 
 // Runs for every request that hits the server
-// app.use((req, res) => {
-//     console.log("A request hits the server");
-//     //text response
-//     // res.send("This is a text response!");
-//     //json response
-//     // res.send({ name: "Jhon" });
-//     //html response
-//     res.send('<h1> This is the html response </h1>');
-// });
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.set('view engine', 'ejs');
 // dirname refers to the location where index.js resides
