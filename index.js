@@ -1,6 +1,8 @@
 // Importing express
 const express = require("express");
 
+const path = require("path");
+
 // Create the express app by calling express
 const app = express();
 
@@ -16,6 +18,8 @@ const app = express();
 // });
 
 app.set('view engine', 'ejs');
+// dirname refers to the location where index.js resides
+app.set('views', path.join(__dirname, '/views'));
 
 app.get('/', (req, res) => {
     res.render('home');
