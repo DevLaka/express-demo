@@ -21,15 +21,27 @@ app.set('view engine', 'ejs');
 // dirname refers to the location where index.js resides
 app.set('views', path.join(__dirname, '/views'));
 
+// Rendering home.ejs 
 app.get('/', (req, res) => {
     res.render('home');
+});
+
+// Rendering subreddit.ejs
+app.get('/r/:subreddit', (req, res) => {
+    const { subreddit } = req.params;
+    res.render('subreddit', { subreddit });
+});
+
+app.get('/rand', (req, res) => {
+    const number = Math.floor(Math.random() * 10) + 7;
+    res.render('random', { randNum: number });
 });
 
 app.get('/about-me', (req, res) => {
     res.send('About Me Page');
 });
 
-//sample request: http://localhost:5000/posts/5?q=children
+// Sample request: http://localhost:5000/posts/5?q=children
 app.get('/posts/:postId', (req, res) => {
     const { postId } = req.params;
     const { q } = req.query;
