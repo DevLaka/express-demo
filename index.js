@@ -32,6 +32,11 @@ app.get('/r/:subreddit', (req, res) => {
     res.render('subreddit', { subreddit });
 });
 
+app.get('/cars', (req, res) => {
+    const cars = ['Toyota', 'Nissan', 'Mazda', 'Mitsubishi', 'Subaru'];
+    res.render('cars', { cars });
+});
+
 app.get('/rand', (req, res) => {
     const number = Math.floor(Math.random() * 10) + 7;
     res.render('random', { randNum: number });
