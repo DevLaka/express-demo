@@ -15,8 +15,10 @@ const app = express();
 //     res.send('<h1> This is the html response </h1>');
 // });
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-    res.send('Home Page');
+    res.render('home');
 });
 
 app.get('/about-me', (req, res) => {
@@ -50,4 +52,4 @@ app.get('*', (req, res) => {
 
 // Starting the server
 // The callback will run after starting the server
-app.listen(5000, () => console.log("Listening on port 5000"));
+app.listen(7000, () => console.log("Listening on port 7000"));
