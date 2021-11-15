@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random</title>
 </head>
+
 <body>
-    <h1> Radom Nubmer: <%= randNum %></h1>
+    <h1> Radom Nubmer: <%= randNum %> </h1>
+    <% if(randNum % 2===0) {%>
+        <h3> This is an even number </h3>
+    <% } else { %>
+        <h3> This is an odd nubmer </h3>
+    <% } %>
+
+    <h1> Using ternary operator </h1>
+    <%= randNum%2===0 ? 'Even number' : 'Odd number' %>
 </body>
+
 </html>
