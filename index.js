@@ -13,6 +13,12 @@ app.set('view engine', 'ejs');
 // dirname refers to the location where index.js resides
 app.set('views', path.join(__dirname, '/views'));
 
+// parsing url encoded request bodies
+app.use(express.urlencoded( {extended: true}));
+
+// parsing json request bodies
+app.use(express.json());
+
 // Rendering home.ejs 
 app.get('/', (req, res) => {
     res.render('home');
@@ -59,7 +65,8 @@ app.get('/search', (req, res) => {
 });
 
 app.post('/cars', (req, res) => {
-    res.send('This is cars post route');
+    const {model, make ,year} = req.body;
+    res.send(`/Cars post route. Car model: ${model}, Make: ${make}, Year: ${year}`);
 });
 
 // Matches all requests
