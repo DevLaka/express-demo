@@ -58,6 +58,10 @@ app.get('/search', (req, res) => {
     }
 });
 
+app.post('/cars', (req, res) => {
+    res.send('This is cars post route');
+});
+
 // Matches all requests
 app.get('*', (req, res) => {
     res.send('Router is undefined');
