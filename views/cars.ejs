@@ -3,11 +3,14 @@
   <%- include('partials/head') %>
   <body>
     <%- include('partials/navbar') %>
-    <h1>All the Cars</h1>
-    <ul>
-      <% for(let car of cars) { %>
-      <li><%= car %></li>
-      <% } %>
-    </ul>
+    <div class="container">
+      <h1>Cars page.</h1>
+      <p>Contains an example of ejs loop.</p>
+      <ul>
+        <% for(let car of cars) { %>
+        <li><%= car %></li>
+        <% } %>
+      </ul>
+    </div>
   </body>
 </html>

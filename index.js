@@ -60,7 +60,7 @@ app.get('/search', (req, res) => {
 
 // Matches all requests
 app.get('*', (req, res) => {
-    res.send('Rounter is undefined');
+    res.send('Router is undefined');
 });
 
 // Starting the server
